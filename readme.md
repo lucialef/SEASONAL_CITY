@@ -62,16 +62,17 @@ Therefore, the question that initiates this research is very simple. As we live 
 <!-- WORKFLOW -->
 ## 02. WORKFLOW
 
-<p align="justify">
-
 **DATASET COMPILATION**
 *Google Colab · Python · Pandas*
 
+<p align="justify">
 The first step was the creation of a dataset containing the phenological characteristics of as many species as possible. After combining several available databases and cleaning the duplicates, an initial dataset of 537 species present in European urban forests was set up and manually completed with the phenological features (months of flowering) of each item.
+</p>
 
 **GRAPH DEFINITION**
 *Google Colab · Python · Pandas · OSMnx · Geopy · Momepy · Pandana · Matplotlib*
 
+<p align="justify">
 As listed in the following sections, several Python libraries were used to build the graph and routing algorithm. To clarify the purpose of each of them:
 · OSMNX: Download the desired city network.
 · MOMEPY: Clean the network and ensure its morphological elements can be measured.
@@ -88,17 +89,20 @@ Then, the shortest and seasonal route functions are built using the **PANDANA** 
 
 The main difference between both functions is the parameter used to weight the graph. For the shortest route function, this variable is the total length of the resulting linestring; the shorter the path, the better. However, the intention of the seasonal route function is quite different; the more trees on a street, the better that particular street should be considered as an alternative path. To achieve this, a measure that combines ‘length’ and ‘amount of trees’ is created.
 After snapping the tree locations to their closest neighbor (node) in the street graph, the value of the occurrences on each node is attached to the edges geo-dataframe. By using **SCIKITLEARN**, both ‘length’ and the inverse of ‘amount of trees’ (as the routing algorithms use a minimization function) are re-scaled from 0 to 1. Finally, the ‘seasonal’ parameter is defined; it combines the values of ‘length’ and ‘amount of trees’ per edge and multiplies the second of them by Input #04, an integer set by the user to decide how much longer would be desirable to walk from A to B.
-
+</p>
 
 **RESULTS EVALUATION**
 *Google Colab · Python · Matplotlib*
 
+<p align="justify">
 Before the web deployment process, the success of the graph and routing functions is tested and verified using **MATPLOTLIB** to graphically display the resulting paths (both shortest and seasonal), comparing the PANDANA shortest route with the results provided by Google Maps, and ensuring different results are achieved by modifying the inputs explained in the previous section; month of the year, origin/source, destination/target, and seasonal weight.
+</p>
 <img src="./load/images/107.jpg">
 
 **WEB DEPLOYMENT**
 *Python · Flask · Mapbox GL JS · Visual Studio Code · HTML · CSS · JavaScript*
 
+<p align="justify">
 The ultimate goal and the biggest challenge of the project was to deploy the routing algorithms previously exposed as a **REST Geospatial API** and display them on an interactive **MAPBOX map**.
 For this purpose, a REQUEST and RESPONSE process was established between a FRONTEND architecture based on **HTML** and **JS**, and a BACKEND server based on **PYTHON** and **FLASK**. In the framework of this research, **Visual Studio Code** was chosen as the editor to build the following web application.
 <img src="./load/images/108.jpg">
@@ -172,6 +176,7 @@ Finally, the refinement of a validation dataset generic enough to be used in sev
 ## 06. LICENSE
 
 <p align="justify">
+
 **UNRAVELING THE SEASONAL CITY** is a project of IAAC, Institute for Advanced Architecture of Catalonia developed in the Master of Advanced Computation in Architecture and Design 2021/22. 
 Student: Lucía Leva 
 Faculty: David A. León
