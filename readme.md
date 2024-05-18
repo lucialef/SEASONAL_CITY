@@ -27,12 +27,14 @@
 ## 00. MANIFESTO
 *Urban AI · Classification Model · Graph Theory · Urban Forest · Canopy Cover · Environmental Design*
 
+<p align="justify">
 Multiple studies use AI tools to categorize, classify, and diagnose both the quantity and quality of the urban forest, as the massive and accelerated urbanization of urban areas has significantly reduced the biodiversity of cities and aggravated pollution, health problems, or physical discomfort of their inhabitants.<br />
 Nevertheless, few studies highlight the importance of creating open and shared knowledge about an urban territory to help citizens reclaim public spaces and strengthen communities through interactive tools. Digital environments can promote new forms of awareness that open debates and increase participation to reactivate social ties, improve the efficiency of public services, or alleviate the conflicts that growing urban sprawls are facing nowadays.<br />
 Despite graph theory proving to be a powerful tool for revealing social fractures or measuring access to points of interest (POIs) through topological analyses, routing algorithms have yet to be considered as an opportunity to delve into the species that coexist with us in our cities.<br />
 In most available applications, the routing decision, which selects the optimal path in the network to transfer data from one point to another, was designed prioritizing the vehicle to the detriment of the pedestrian, considering that in this hectic society, time is the only valid variable when a citizen decides to walk.<br />
 The importance of informing, educating, and empowering the community about environmental inequalities seems crucial to encourage people to get involved in local initiatives, such as recovering and protecting the biodiversity of their cities or promoting sustainable alternatives.
 Therefore, the question that initiates this research is very simple. As we live intrinsically connected with urban ecosystems, would it be possible to benefit from graph theory to develop a routing algorithm that allows citizens to discover alternative paths to the shortest one, based on the seasonality of the urban forest and depending on the time of the year?
+</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -40,6 +42,7 @@ Therefore, the question that initiates this research is very simple. As we live 
 <!-- HOW TO USE -->
 ## 01. HOW TO USE
 
+<p align="justify">
 1. Clone the repository.
 2. Download the city's network. i.e. The OSMNX library can be used with a Google Colab Notebook to download the complete street network of the desired city and save its nodes and edges as a geopackage. Replace the new files in the "load" folder.
 3. Download the trees of the selected city as a shapefile and replace the new file in the "load" folder.
@@ -47,6 +50,7 @@ Therefore, the question that initiates this research is very simple. As we live 
 5. Check the installation requirements and libraries specified in the requirements.txt file.
 6. Run the app with Python.
 7. Follow the instructions defined on the website.
+</p>
 
 <video src="./load/images/SEASONALCITY.mp4" controls="controls" style="max-width: 100%;">
     Your browser does not support the video tag.
@@ -57,6 +61,8 @@ Therefore, the question that initiates this research is very simple. As we live 
 
 <!-- WORKFLOW -->
 ## 02. WORKFLOW
+
+<p align="justify">
 
 **DATASET COMPILATION**
 *Google Colab · Python · Pandas*
@@ -83,6 +89,7 @@ Then, the shortest and seasonal route functions are built using the **PANDANA** 
 The main difference between both functions is the parameter used to weight the graph. For the shortest route function, this variable is the total length of the resulting linestring; the shorter the path, the better. However, the intention of the seasonal route function is quite different; the more trees on a street, the better that particular street should be considered as an alternative path. To achieve this, a measure that combines ‘length’ and ‘amount of trees’ is created.
 After snapping the tree locations to their closest neighbor (node) in the street graph, the value of the occurrences on each node is attached to the edges geo-dataframe. By using **SCIKITLEARN**, both ‘length’ and the inverse of ‘amount of trees’ (as the routing algorithms use a minimization function) are re-scaled from 0 to 1. Finally, the ‘seasonal’ parameter is defined; it combines the values of ‘length’ and ‘amount of trees’ per edge and multiplies the second of them by Input #04, an integer set by the user to decide how much longer would be desirable to walk from A to B.
 
+
 **RESULTS EVALUATION**
 *Google Colab · Python · Matplotlib*
 
@@ -101,7 +108,7 @@ On the Frontend, when the user sets an origin and a destination by clicking poin
 On the Backend, a main Python file receives the inputs thanks to the Flask framework and calls the seasonal function that encodes the routing algorithms in a secondary Python file, which calculates and returns the outputs to the main Python file.
 Once the main Python file receives the output data from the routing algorithm, it is packed as a JSON file before the Backend API can return the response to the Frontend. Finally, the JavaScript file fetches the promise that awaits and displays the five outputs; the shortest route (polyline), the seasonal route (polyline), the origin address (text), the destination address (text), and the seasonal trees (points).
 <img src="./load/images/109.jpg">
-
+</p>
 
 <!-- CASE STUDY -->
 ## 03. CASE STUDY
@@ -109,10 +116,12 @@ Once the main Python file receives the output data from the routing algorithm, i
 <img src="./load/images/103.jpg">
 <img src="./load/images/104.jpg">
 
+<p align="justify">
 To validate the workflow, the city of Seville, Spain, was chosen as a case study. In addition to having its catalog of urban trees updated and available online, the size of the urban environment is small enough to accelerate the process of filtering trees by month and the consequent routing calculation, yet large enough to yield different results when modifying the inputs.
 
 After studying the flowering months of the 209 tree species cataloged in the city, the results are validated in Matplotlib before proceeding to the web deployment process.
 <img src="./load/images/105.jpg">
+</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,18 +129,22 @@ After studying the flowering months of the 209 tree species cataloged in the cit
 <!-- COROLLARY -->
 ## 04. COROLLARY
 
+<p align="justify">
 The research presents a method to create routing algorithms in a city based on the seasonality of its urban forest. Furthermore, it allows users to benefit from graph theory to discover alternative paths through an interactive digital tool and to raise awareness of biodiversity loss in their urban environments.
 As an initial approach, the results have been satisfactory. However, the strategies chosen for its generation are only applicable if a city has its flora catalog updated. Additionally, other relevant criteria, such as tree age or health, have been excluded from this project due to a lack of available information.
 As mentioned in the Dataset Creation section, there was a manual input process in which tree data was completed to include its phenological features. This process, besides being time- and resource-consuming, induces inaccuracy when considering that trees adapt their flowering time to their habitat's specific climate.
 In this sense, the attempt to capture and measure biodiversity in an environment highlights the complexity of properly diagnosing the reality of the urban forest without introducing bias. A possible solution to overcome this problem will be to encode other urban features. In particular, the combination of trees, soil type, and climate datasets for each location with its topology in a Machine Learning model that better predicts the blossom time per species.
 In any case, the project opens the door to promising future steps to improve the routing algorithms and lead users to a better understanding of the urban landscape. For instance, by displaying the economic and health benefits of urban trees or by predicting optimal native vegetation types that enhance biodiversity within a selected or desired area.
 Finally, the refinement of a validation dataset generic enough to be used in several and diverse urban situations poses a significant challenge. As species pass on climate adaptation to their offspring to react to climate change, the validity of the dataset could be easily compromised if not periodically verified.
+</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- REFERENCES -->
 ## 05. REFERENCES
+
+<p align="justify">
 
  **Precedents/**
  · Bennet, S. (n.d.). OpenTrees. Available at: https://opentrees.org/
@@ -150,6 +163,7 @@ Finally, the refinement of a validation dataset generic enough to be used in sev
 
  **Code/**
  · Arribas-Bel, D., Puga, D. (n.d.). Geographic Data Science for Applied Economists. Available at: http://darribas.org/gds4ae/content/pages/home.html
+ </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,9 +171,11 @@ Finally, the refinement of a validation dataset generic enough to be used in sev
 <!-- LICENSE -->
 ## 06. LICENSE
 
+<p align="justify">
 **UNRAVELING THE SEASONAL CITY** is a project of IAAC, Institute for Advanced Architecture of Catalonia developed in the Master of Advanced Computation in Architecture and Design 2021/22. 
 Student: Lucía Leva 
 Faculty: David A. León
+</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
