@@ -29,6 +29,7 @@
 
 <!-- MANIFESTO -->
 <div>
+  <a name="manifesto"></a>
   <h2 align="center">00/ MANIFESTO</h2>
   <p align="center">
     <em>Urban AI · Classification Model · Graph Theory · Urban Forest · Canopy Cover · Environmental Design</em><br />
@@ -50,6 +51,7 @@
 
 <!-- HOW TO USE -->
 <div>
+  <a name="how-to-use"></a>
   <h2 align="center">01/ HOW TO USE</h2>
   <p align="justify">
     1. Clone the repository.<br />
@@ -72,20 +74,20 @@
 
 <!-- WORKFLOW -->
 <div>
+  <a name="workflow"></a>
   <h2 align="center">02/ WORKFLOW</h2>
   <h3 align="justify">DATASET COMPILATION</h3>
       <p align="center">
         <em>Google Colab · Python · Pandas</em><br />
-        <br />
       </p>
       <p align="justify">
         The first step was the creation of a dataset containing the phenological characteristics of as many species as possible. After combining several available databases and cleaning the duplicates, an initial dataset of 537 species present in European urban forests was set up and manually completed with the phenological features (months of flowering) of each item.
+        <br />
         <br />
       </p>
   <h3 align="justify">GRAPH DEFINITION</h3>
     <p align="center">
       <em>Google Colab · Python · Pandas · OSMnx · Geopy · Momepy · Pandana · Matplotlib</em><br />
-      <br />
     </p>
     <p align="justify">
       As listed in the following sections, several Python libraries were used to build the graph and routing algorithm. To clarify the purpose of each of them:<br />
@@ -106,11 +108,11 @@
       The main difference between both functions is the parameter used to weight the graph. For the shortest route function, this variable is the total length of the resulting linestring; the shorter the path, the better. However, the intention of the seasonal route function is quite different; the more trees on a street, the better that particular street should be considered as an alternative path. To achieve this, a measure that combines ‘length’ and ‘amount of trees’ is created.<br />
       After snapping the tree locations to their closest neighbor (node) in the street graph, the value of the occurrences on each node is attached to the edges geo-dataframe. By using <strong>SCIKITLEARN</strong>, both ‘length’ and the inverse of ‘amount of trees’ (as the routing algorithms use a minimization function) are re-scaled from 0 to 1. Finally, the ‘seasonal’ parameter is defined; it combines the values of ‘length’ and ‘amount of trees’ per edge and multiplies the second of them by Input #04, an integer set by the user to decide how much longer would be desirable to walk from A to B.
       <br />
+      <br />
     </p>
   <h3 align="justify">RESULTS EVALUATION</h3>
     <p align="center">
       <em>Google Colab · Python · Matplotlib</em><br />
-      <br />
     </p>
     <p align="justify">
       Before the web deployment process, the success of the graph and routing functions is tested and verified using <strong>MATPLOTLIB</strong> to graphically display the resulting paths (both shortest and seasonal), comparing the PANDANA shortest route with the results provided by Google Maps, and ensuring different results are achieved by modifying the inputs explained in the previous section; month of the year, origin/source, destination/target, and seasonal weight.
@@ -123,7 +125,6 @@
   <h3 align="justify">WEB DEPLOYMENT</h3>
     <p align="center">
       <em>Python · Flask · Mapbox GL JS · Visual Studio Code · HTML · CSS · JavaScript</em><br />
-      <br />
     </p>
     <p align="justify">
       The ultimate goal and the biggest challenge of the project was to deploy the routing algorithms previously exposed as a <strong>REST Geospatial API</strong> and display them on an interactive <strong>MAPBOX map</strong>.<br />
@@ -131,7 +132,7 @@
       <br />
     </p>
     <p align="center">
-      <img src="./load/images/108.jpg" width="80" height="80">
+      <img src="./load/images/108.jpg" width="70%" height="70%">
       <br />
     </p>
     <p align="justify">
@@ -147,6 +148,7 @@
 
 <!-- CASE STUDY -->
 <div>
+  <a name="case-study"></a>
   <h2 align="center">03/ CASE STUDY</h2>
   <p align="center">
     <img src="./load/images/103.jpg">
@@ -170,6 +172,7 @@
 
 <!-- COROLLARY -->
 <div>
+  <a name="corollary"></a>
   <h2 align="center">04/ COROLLARY</h2>
   <p align="justify">
     The research presents a method to create routing algorithms in a city based on the seasonality of its urban forest. Furthermore, it allows users to benefit from graph theory to discover alternative paths through an interactive digital tool and to raise awareness of biodiversity loss in their urban environments.<br />
@@ -186,6 +189,7 @@
 
 <!-- REFERENCES -->
 <div>
+  <a name="references"></a>
   <h2 align="center">05/ REFERENCES</h2>
   <p align="justify">
     <strong>Precedents/</strong><br />
@@ -212,17 +216,17 @@
 
 <!-- LICENSE -->
 <div>
+  <a name="license"></a>
   <h2 align="center">06/ LICENSE</h2>
   <p align="justify">
     <strong>UNRAVELING THE SEASONAL CITY</strong> is a project of IAAC, Institute for Advanced Architecture of Catalonia developed in the Master of Advanced Computation in Architecture and Design 2021/22.<br />
     Student: Lucía Leva<br />
     Faculty: David A. León<br />
   </p>
+  <p align="center">
+    <img src="./load/images/101.jpg">
+    <br />
+  </p>
 </div>
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<p align="center">
-  <img src="./load/images/101.jpg">
-  <br />
-</p>
