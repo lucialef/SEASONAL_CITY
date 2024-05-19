@@ -28,8 +28,8 @@
 
 
 <!-- MANIFESTO -->
+<a name="manifesto"></a>
 <div>
-  <a name="manifesto"></a>
   <h2 align="center">00/ MANIFESTO</h2>
   <p align="center">
     <em>Urban AI · Classification Model · Graph Theory · Urban Forest · Canopy Cover · Environmental Design</em><br />
@@ -50,8 +50,8 @@
 
 
 <!-- HOW TO USE -->
+<a name="how-to-use"></a>
 <div>
-  <a name="how-to-use"></a>
   <h2 align="center">01/ HOW TO USE</h2>
   <p align="justify">
     1. Clone the repository.<br />
@@ -73,8 +73,8 @@
 
 
 <!-- WORKFLOW -->
+<a name="workflow"></a>
 <div>
-  <a name="workflow"></a>
   <h2 align="center">02/ WORKFLOW</h2>
   <h3 align="justify">DATASET COMPILATION</h3>
       <p align="center">
@@ -142,13 +142,17 @@
       Once the main Python file receives the output data from the routing algorithm, it is packed as a JSON file before the Backend API can return the response to the Frontend. Finally, the JavaScript file fetches the promise that awaits and displays the five outputs; the shortest route (polyline), the seasonal route (polyline), the origin address (text), the destination address (text), and the seasonal trees (points).
       <br />
     </p>
+    <p align="center">
+      <img src="./load/images/110.jpg">
+      <br />
+    </p>
 </div>
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CASE STUDY -->
+<a name="case-study"></a>
 <div>
-  <a name="case-study"></a>
   <h2 align="center">03/ CASE STUDY</h2>
   <p align="center">
     <img src="./load/images/103.jpg">
@@ -171,8 +175,8 @@
 
 
 <!-- COROLLARY -->
+<a name="corollary"></a>
 <div>
-  <a name="corollary"></a>
   <h2 align="center">04/ COROLLARY</h2>
   <p align="justify">
     The research presents a method to create routing algorithms in a city based on the seasonality of its urban forest. Furthermore, it allows users to benefit from graph theory to discover alternative paths through an interactive digital tool and to raise awareness of biodiversity loss in their urban environments.<br />
@@ -182,14 +186,18 @@
     In any case, the project opens the door to promising future steps to improve the routing algorithms and lead users to a better understanding of the urban landscape. For instance, by displaying the economic and health benefits of urban trees or by predicting optimal native vegetation types that enhance biodiversity within a selected or desired area.<br />
     Finally, the refinement of a validation dataset generic enough to be used in several and diverse urban situations poses a significant challenge. As species pass on climate adaptation to their offspring to react to climate change, the validity of the dataset could be easily compromised if not periodically verified.<br />
   </p>
+  <p align="center">
+    <img src="./load/images/111.gif">
+    <br />
+  </p>
 </div>
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- REFERENCES -->
+<a name="references"></a>
 <div>
-  <a name="references"></a>
   <h2 align="center">05/ REFERENCES</h2>
   <p align="justify">
     <strong>Precedents/</strong><br />
@@ -215,8 +223,8 @@
 
 
 <!-- LICENSE -->
+<a name="license"></a>
 <div>
-  <a name="license"></a>
   <h2 align="center">06/ LICENSE</h2>
   <p align="justify">
     <strong>UNRAVELING THE SEASONAL CITY</strong> is a project of IAAC, Institute for Advanced Architecture of Catalonia developed in the Master of Advanced Computation in Architecture and Design 2021/22.<br />
