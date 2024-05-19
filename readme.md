@@ -63,9 +63,8 @@
     7. Follow the instructions defined on the website.<br />
   </p>
   <p align="center">
-    <video src="./load/images/SEASONALCITY.mp4" controls="controls" style="max-width: 100%;">
-        Your browser does not support the video tag.
-    </video>
+    <img src="./load/images/112.gif">
+    <br />
   </p>
 </div>
 
@@ -143,7 +142,7 @@
       <br />
     </p>
     <p align="center">
-      <img src="./load/images/110.jpg">
+      <img src="./load/images/110.jpg" width="70%" height="70%">
       <br />
     </p>
 </div>
