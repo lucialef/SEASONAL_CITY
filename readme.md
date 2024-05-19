@@ -4,6 +4,7 @@
     <img src="./load/images/101.jpg">
     <br />
   </p>
+  <a name="readme-top"></a>
   <h2 align="center">UNRAVELING THE SEASONAL CITY</h2>
   <p align="justify">
       <strong>UNRAVELING THE SEASONAL CITY</strong>, is a tool designed to map and discover alternative pedestrian routes on the city based on the seasonality of the urban forest, providing the user with paths featuring the greatest number of trees in flowering period at each month of the year and displaying information about the benefits the different species bring to the urban environment. 
